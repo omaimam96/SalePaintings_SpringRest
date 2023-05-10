@@ -2,7 +2,7 @@ package it.contrader.model;
 
 import java.util.Date;
 
-public class datiAnagrafici {
+public class DatiAnagrafici {
     private String nome;
     private String cognome;
     private String genere;
@@ -12,10 +12,10 @@ public class datiAnagrafici {
     private String cittaResidenza;
     private String indirizzo;
 
-    public datiAnagrafici(){
+    public DatiAnagrafici(){
 
     };
-    public datiAnagrafici(String nome, String cognome, String genere, Date datadinascita, String nazione, String provincia,
+    public DatiAnagrafici(String nome, String cognome, String genere, Date datadinascita, String nazione, String provincia,
                           String cittaResidenza, String indirizzo){
         setNome(nome);
         setCognome(cognome);
@@ -93,6 +93,7 @@ public class datiAnagrafici {
 
     @Override
     public String toString() {
-        return super.toString();
+        return  nome + "\t"  + cognome +"\t\t" +  genere  + "\t\t" + datadinascita + "\t\t" + nazione+ "\t\t" +
+                provincia+ "\t\t" +cittaResidenza+ "\t\t" +indirizzo;
     }
 }

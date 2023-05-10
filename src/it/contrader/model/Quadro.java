@@ -1,16 +1,16 @@
 package it.contrader.model;
 
-public class quadro {
+public class Quadro {
     private String nome;
     private String tipologia;
     private double costo;
     private String orientamento;
     private String descrizione;
 
-    public quadro() {
+    public Quadro() {
     }
 
-    public quadro(String nome, String tipologia, double costo, String orientamento, String descrizione) {
+    public Quadro(String nome, String tipologia, double costo, String orientamento, String descrizione) {
         this.nome = nome;
         this.tipologia = tipologia;
         this.costo = costo;
@@ -60,6 +60,6 @@ public class quadro {
 
     @Override
     public String toString() {
-        return super.toString();
+        return  nome + "\t"  + tipologia +"\t\t" +   costo + "\t\t" + orientamento+ "\t\t" + descrizione;
     }
 }
