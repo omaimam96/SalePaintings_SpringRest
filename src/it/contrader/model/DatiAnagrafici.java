@@ -1,8 +1,10 @@
 package it.contrader.model;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class DatiAnagrafici {
+    private int id;
     private String nome;
     private String cognome;
     private String genere;
@@ -26,6 +28,18 @@ public class DatiAnagrafici {
         setCittaResidenza(cittaResidenza);
         setIndirizzo(indirizzo);
     };
+
+    public DatiAnagrafici(int id, String nome, String cognome, String genere, Date datadinascita, String nazione, String provincia, String cittaResidenza, String indirizzo) {
+        this.id = id;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.genere = genere;
+        this.datadinascita = datadinascita;
+        this.nazione = nazione;
+        this.provincia = provincia;
+        this.cittaResidenza = cittaResidenza;
+        this.indirizzo = indirizzo;
+    }
 
     public String getNome() {
         return nome;
@@ -96,4 +110,14 @@ public class DatiAnagrafici {
         return  nome + "\t"  + cognome +"\t\t" +  genere  + "\t\t" + datadinascita + "\t\t" + nazione+ "\t\t" +
                 provincia+ "\t\t" +cittaResidenza+ "\t\t" +indirizzo;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DatiAnagrafici that = (DatiAnagrafici) o;
+        return id == that.id && Objects.equals(nome, that.nome) && Objects.equals(cognome, that.cognome) && Objects.equals(genere, that.genere) && Objects.equals(datadinascita, that.datadinascita) && Objects.equals(nazione, that.nazione) && Objects.equals(provincia, that.provincia) && Objects.equals(cittaResidenza, that.cittaResidenza) && Objects.equals(indirizzo, that.indirizzo);
+    }
+
+
 }
