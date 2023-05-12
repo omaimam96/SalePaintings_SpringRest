@@ -50,6 +50,7 @@ public class UserController implements Controller {
 		String username;
 		String password;
 		String usertype;
+		String register;
 
 		switch (mode) {
 		
@@ -66,13 +67,13 @@ public class UserController implements Controller {
 			username = request.get("username").toString();
 			password = request.get("password").toString();
 			usertype = request.get("usertype").toString();
-			
+			register = request.get("register").toString();
 			//costruisce l'oggetto user da inserire
 			UserDTO usertoinsert = new UserDTO(username, password, usertype);
 			//invoca il service
 			userService.insert(usertoinsert);
 			request = new Request();
-			request.put("mode", "mode");
+			request.put("register", register);
 			//Rimanda alla view con la risposta
 			MainDispatcher.getInstance().callView(sub_package + "UserInsert", request);
 			break;

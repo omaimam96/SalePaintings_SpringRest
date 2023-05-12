@@ -13,6 +13,8 @@ public class SignUpView extends AbstractView {
 
     private final String mode = "INSERT";
 
+    private String register= "true";
+
     public void showResults(Request request) {
 
     }
@@ -50,6 +52,7 @@ public class SignUpView extends AbstractView {
         request.put("username", username);
         request.put("password", password);
         request.put("mode", mode);
+        request.put("register",register);
 
         MainDispatcher.getInstance().callAction("User", "doControl", request);
     }
