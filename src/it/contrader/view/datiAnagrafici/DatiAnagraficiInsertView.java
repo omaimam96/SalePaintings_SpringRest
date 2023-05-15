@@ -18,7 +18,8 @@ public class DatiAnagraficiInsertView extends AbstractView {
     private String cittaResidenza;
     private String indirizzo;
     private final String mode = "INSERT";
-    public DatiAnagraficiInsertView(){
+
+    public DatiAnagraficiInsertView() {
 
     }
 
@@ -27,21 +28,19 @@ public class DatiAnagraficiInsertView extends AbstractView {
         if (request != null) {
             System.out.println("Inserimento andato a buon fine.\n");
 
-<<<<<<< HEAD
-            if(request.get("register").toString().equals("true")){
+
+            if (request.get("register").toString().equals("true")) {
                 MainDispatcher.getInstance().callView("Login", null);
 
-            }else{
+            } else {
                 MainDispatcher.getInstance().callView("HomeAdmin", null);
 
             }
-=======
+
             MainDispatcher.getInstance().callView("Login", null);
 
 
->>>>>>> fa9ad85 (fix)
-
-    }
+        }
 
     }
 
@@ -77,7 +76,7 @@ public class DatiAnagraficiInsertView extends AbstractView {
         request.put("provincia", provincia);
         request.put("cittaResidenza", cittaResidenza);
         request.put("indirizzo", indirizzo);
-        request.put("register","false");
+        request.put("register", "false");
         MainDispatcher.getInstance().callAction("DatiAnagrafici", "doControl", request);
 
     }

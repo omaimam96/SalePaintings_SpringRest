@@ -12,14 +12,14 @@ public class DatiAnagraficiConverter {
         DatiAnagraficiDTO datiAnagraficiDTO= new DatiAnagraficiDTO(datiAnagrafici.getId(), datiAnagrafici.getNome(),
                 datiAnagrafici.getCognome(), datiAnagrafici.getGenere(), datiAnagrafici.getDatadinascita(),
                 datiAnagrafici.getNazione(), datiAnagrafici.getProvincia(), datiAnagrafici.getCittaResidenza(),
-                datiAnagrafici.getIndirizzo());
+                datiAnagrafici.getIndirizzo(),datiAnagrafici.getUser());
         return datiAnagraficiDTO;
     }
     public DatiAnagrafici toEntity(DatiAnagraficiDTO datiAnagraficiDTO){
         DatiAnagrafici datiAnagrafici= new DatiAnagrafici(datiAnagraficiDTO.getId(), datiAnagraficiDTO.getNome(),
                 datiAnagraficiDTO.getCognome(), datiAnagraficiDTO.getGenere(), datiAnagraficiDTO.getDatadinascita(),
                 datiAnagraficiDTO.getNazione(), datiAnagraficiDTO.getProvincia(), datiAnagraficiDTO.getCittaResidenza(),
-                datiAnagraficiDTO.getIndirizzo());
+                datiAnagraficiDTO.getIndirizzo(),datiAnagraficiDTO.getUser());
         return datiAnagrafici;
     }
     public List<DatiAnagraficiDTO> toDTOList(List<DatiAnagrafici> datiAnagraficiList){
