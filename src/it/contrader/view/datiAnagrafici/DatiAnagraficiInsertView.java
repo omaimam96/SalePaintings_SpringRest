@@ -27,6 +27,7 @@ public class DatiAnagraficiInsertView extends AbstractView {
         if (request != null) {
             System.out.println("Inserimento andato a buon fine.\n");
 
+<<<<<<< HEAD
             if(request.get("register").toString().equals("true")){
                 MainDispatcher.getInstance().callView("Login", null);
 
@@ -34,6 +35,11 @@ public class DatiAnagraficiInsertView extends AbstractView {
                 MainDispatcher.getInstance().callView("HomeAdmin", null);
 
             }
+=======
+            MainDispatcher.getInstance().callView("Login", null);
+
+
+>>>>>>> fa9ad85 (fix)
 
     }
 
