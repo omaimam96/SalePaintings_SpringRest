@@ -12,13 +12,8 @@ public class DatiAnagraficiDAO {
 
     private final String QUERY_ALL= "SELECT * FROM datianagrafici";
     private final String QUERY_CREATE= "INSERT INTO datianagrafici (nome, cognome, genere, datadinascita," +
-<<<<<<< HEAD
-            "nazione,provincia,cittaResidenza,indirizzo) VALUES (?,?,?,?,?,?,?,?)";
-    private final String QUERY_READ= "SELECT * FROM datianagrafici WHERE user=?";
-=======
             "nazione,provincia,cittaResidenza,indirizzo";
     private final String QUERY_READ= "SELECT * FROM datianagrafici WHERE id=?";
->>>>>>> fd267c7 (restore first Application.java)
     private final String QUERY_UPDATE= "UPDATE datianagrafici SET nome=?, cognome=?, genere=?, datadinascita=?," +
             "nazione=?,provincia=?,cittaResidenza=?,indirizzo=?";
 
@@ -33,31 +28,18 @@ public class DatiAnagraficiDAO {
             ResultSet resultSet = statement.executeQuery(QUERY_ALL);
             DatiAnagrafici datiAnagrafici;
             while (resultSet.next()){
-<<<<<<< HEAD
-                int user= resultSet.getInt("user");
-                String nome= resultSet.getString("nome");
-                String cognome= resultSet.getString("cognome");
-                String genere= resultSet.getString("genere");
-                Date datadinascita= resultSet.getDate("dataNascita");
-=======
                 int id= resultSet.getInt("id");
                 String nome= resultSet.getString("nome");
                 String cognome= resultSet.getString("cognome");
                 String genere= resultSet.getString("genere");
                 Date datadinascita= resultSet.getDate("datadinascita");
->>>>>>> fd267c7 (restore first Application.java)
                 String nazione= resultSet.getString("nazione");
                 String provincia= resultSet.getString("provincia");
                 String cittaResidenza= resultSet.getString("cittaResidenza");
                 String indirizzo= resultSet.getString("indirizzo");
                 datiAnagrafici= new DatiAnagrafici(nome, cognome, genere, datadinascita,
-<<<<<<< HEAD
-                        nazione,provincia,cittaResidenza,indirizzo,user);
-                datiAnagrafici.setUser(user);
-=======
                         nazione,provincia,cittaResidenza,indirizzo);
                 datiAnagrafici.setId(id);
->>>>>>> fd267c7 (restore first Application.java)
                 datiAnagraficiList.add(datiAnagrafici);
             }
 
@@ -100,29 +82,17 @@ public class DatiAnagraficiDAO {
             nome= resultSet.getNString("nome");
             cognome= resultSet.getString("cognome");
             genere= resultSet.getString("genere");
-<<<<<<< HEAD
-            datadinascita=resultSet.getDate("dataNascita");
-=======
             datadinascita=resultSet.getDate("datadinascita");
->>>>>>> fd267c7 (restore first Application.java)
             nazione= resultSet.getString("nazione");
             provincia= resultSet.getString("provincia");
             cittaResidenza=resultSet.getString("cittaResidenza");
             indirizzo= resultSet.getString("indirizzo");
             DatiAnagrafici datiAnagrafici= new DatiAnagrafici(nome,cognome,genere,datadinascita,nazione,provincia,
                     cittaResidenza,indirizzo);
-<<<<<<< HEAD
-            datiAnagrafici.setId(resultSet.getInt("user"));
-            return datiAnagrafici;
-
-        }catch (SQLException e){
-            e.printStackTrace();
-=======
             datiAnagrafici.setId(resultSet.getInt("id"));
             return datiAnagrafici;
 
         }catch (SQLException e){
->>>>>>> fd267c7 (restore first Application.java)
             return null;
         }
     }
@@ -133,53 +103,7 @@ public class DatiAnagraficiDAO {
         }
         DatiAnagrafici datiAnagraficiRead = read(datiAnagraficiToUpdate.getId());
         if (!datiAnagraficiRead.equals(datiAnagraficiToUpdate)){
-<<<<<<< HEAD
-            try{
-                if (datiAnagraficiToUpdate.getNome()==null||datiAnagraficiToUpdate.getNome().equals("")){
-                    datiAnagraficiToUpdate.setNome(datiAnagraficiRead.getNome());
-                }
-                if (datiAnagraficiToUpdate.getCognome()==null||datiAnagraficiToUpdate.getCognome().equals("")){
-                    datiAnagraficiToUpdate.setCognome(datiAnagraficiRead.getCognome());
-                }
-                if (datiAnagraficiToUpdate.getGenere()==null||datiAnagraficiToUpdate.getGenere().equals("")){
-                    datiAnagraficiToUpdate.setGenere(datiAnagraficiRead.getGenere());
-                }
-                if (datiAnagraficiToUpdate.getDatadinascita()==null||datiAnagraficiToUpdate.getDatadinascita().equals("")){
-                    datiAnagraficiToUpdate.setDatadinascita(datiAnagraficiRead.getDatadinascita());
-                }
-                if (datiAnagraficiToUpdate.getNazione()==null||datiAnagraficiToUpdate.getNazione().equals("")){
-                    datiAnagraficiToUpdate.setNazione(datiAnagraficiRead.getNazione());
-                }
-                if (datiAnagraficiToUpdate.getProvincia()==null||datiAnagraficiToUpdate.getProvincia().equals("")){
-                    datiAnagraficiToUpdate.setProvincia(datiAnagraficiRead.getProvincia());
-                }
-                if (datiAnagraficiToUpdate.getCittaResidenza()==null||datiAnagraficiToUpdate.getCittaResidenza().equals("")){
-                    datiAnagraficiToUpdate.setCittaResidenza(datiAnagraficiRead.getCittaResidenza());
-                }
-                if (datiAnagraficiToUpdate.getIndirizzo()==null||datiAnagraficiToUpdate.getIndirizzo().equals("")){
-                    datiAnagraficiToUpdate.setIndirizzo(datiAnagraficiRead.getIndirizzo());
-                }
-                PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
-                preparedStatement.setString(1, datiAnagraficiToUpdate.getNome());
-                preparedStatement.setString(2, datiAnagraficiToUpdate.getCognome());
-                preparedStatement.setString(3, datiAnagraficiToUpdate.getGenere());
-                preparedStatement.setDate(4, (java.sql.Date) datiAnagraficiToUpdate.getDatadinascita());
-                preparedStatement.setString(5, datiAnagraficiToUpdate.getNazione());
-                preparedStatement.setString(6, datiAnagraficiToUpdate.getProvincia());
-                preparedStatement.setString(7, datiAnagraficiToUpdate.getCittaResidenza());
-                preparedStatement.setString(8, datiAnagraficiToUpdate.getIndirizzo());
-                int a= preparedStatement.executeUpdate();
-                if (a > 0)
-                    return true;
-                else
-                    return false;
 
-            }catch (SQLException e){
-                return false;
-            }
-=======
-
->>>>>>> fd267c7 (restore first Application.java)
         }
         return false;
     }
