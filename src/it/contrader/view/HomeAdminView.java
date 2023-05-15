@@ -57,7 +57,7 @@ public class HomeAdminView extends AbstractView {
         	break;
         case "p":
             this.request.put("mode", "PROFILO");
-            MainDispatcher.getInstance().callAction("DatiAnagrafici", "doControl", null);
+            MainDispatcher.getInstance().callAction("DatiAnagrafici", "doControl", request);
             break;
         case "o":
             this.request.put("mode", "PAINTINGLIST");
