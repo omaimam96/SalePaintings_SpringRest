@@ -13,13 +13,12 @@ public class DatiAnagrafici {
     private String provincia;
     private String cittaResidenza;
     private String indirizzo;
-    private int user;
 
     public DatiAnagrafici(){
 
     };
     public DatiAnagrafici(String nome, String cognome, String genere, Date datadinascita, String nazione, String provincia,
-                          String cittaResidenza, String indirizzo, int user){
+                          String cittaResidenza, String indirizzo){
         setNome(nome);
         setCognome(cognome);
         setGenere(genere);
@@ -28,14 +27,10 @@ public class DatiAnagrafici {
         setProvincia(provincia);
         setCittaResidenza(cittaResidenza);
         setIndirizzo(indirizzo);
-        setUser(user);
     };
 
-    public DatiAnagrafici(int id, String nome, String cognome,
-                          String genere, Date datadinascita, String nazione,
-                          String provincia, String cittaResidenza, String indirizzo, int user) {
-
-        this.id=id;
+    public DatiAnagrafici(int id, String nome, String cognome, String genere, Date datadinascita, String nazione, String provincia, String cittaResidenza, String indirizzo) {
+        this.id = id;
         this.nome = nome;
         this.cognome = cognome;
         this.genere = genere;
@@ -44,7 +39,6 @@ public class DatiAnagrafici {
         this.provincia = provincia;
         this.cittaResidenza = cittaResidenza;
         this.indirizzo = indirizzo;
-        this.user=user;
     }
 
     public int getId() {
@@ -53,14 +47,6 @@ public class DatiAnagrafici {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getUser() {
-        return user;
-    }
-
-    public void setUser(int user) {
-        this.user = user;
     }
 
     public String getNome() {
@@ -129,7 +115,7 @@ public class DatiAnagrafici {
 
     @Override
     public String toString() {
-        return  "\t"+nome + "\t"  + cognome +"\t\t" +  genere  + "\t\t" + datadinascita + "\t\t" + nazione+ "\t\t" +
+        return  id+"\t"+nome + "\t"  + cognome +"\t\t" +  genere  + "\t\t" + datadinascita + "\t\t" + nazione+ "\t\t" +
                 provincia+ "\t\t" +cittaResidenza+ "\t\t" +indirizzo;
     }
 
@@ -138,11 +124,7 @@ public class DatiAnagrafici {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DatiAnagrafici that = (DatiAnagrafici) o;
-        return id == that.id && user == that.user && Objects.equals(nome, that.nome)
-                && Objects.equals(cognome, that.cognome) && Objects.equals(genere, that.genere)
-                && Objects.equals(datadinascita, that.datadinascita) && Objects.equals(nazione, that.nazione)
-                && Objects.equals(provincia, that.provincia) && Objects.equals(cittaResidenza, that.cittaResidenza)
-                && Objects.equals(indirizzo, that.indirizzo);
+        return id == that.id && Objects.equals(nome, that.nome) && Objects.equals(cognome, that.cognome) && Objects.equals(genere, that.genere) && Objects.equals(datadinascita, that.datadinascita) && Objects.equals(nazione, that.nazione) && Objects.equals(provincia, that.provincia) && Objects.equals(cittaResidenza, that.cittaResidenza) && Objects.equals(indirizzo, that.indirizzo);
     }
 
 

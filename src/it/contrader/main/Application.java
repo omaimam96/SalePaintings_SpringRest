@@ -1,5 +1,6 @@
 package it.contrader.main;
 
+import java.util.Scanner;
 
 /*
  * Ogni applicazione java necessita di una funzione main() 
