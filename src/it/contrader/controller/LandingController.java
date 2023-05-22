@@ -22,7 +22,7 @@ public class LandingController implements Controller {
         /**
          * Attraverso il Dispatcher va alla pagina di autenticazione
          */
-        MainDispatcher.getInstance().callView("Landing", null);
+        MainDispatcher.getInstance().callView("Landing", request);
     }
 
 }

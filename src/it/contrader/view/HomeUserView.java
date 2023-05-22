@@ -29,11 +29,11 @@ public class HomeUserView extends AbstractView{
 		switch (choice) {
 
 		case "e":
-			MainDispatcher.getInstance().callAction("Landing", "doControl", null);
+			MainDispatcher.getInstance().callAction("Login", "doControl", null);
 			break;
 
 		default:
-			MainDispatcher.getInstance().callAction("Landing", "doControl", null);
+			MainDispatcher.getInstance().callAction("Login", "doControl", null);
 		}
 	}
 

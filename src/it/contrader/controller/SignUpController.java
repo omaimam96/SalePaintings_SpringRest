@@ -8,7 +8,7 @@ public class SignUpController implements Controller {
 
     public void doControl (Request request) {
         /**
-         * Attraverso il Dispatcher va alla pagina di registrazione
+         * Attraverso il Dispatcher va alla pagina di autenticazione
          */
         MainDispatcher.getInstance().callView("Register", request);
     }
