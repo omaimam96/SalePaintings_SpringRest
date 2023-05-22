@@ -1,20 +1,15 @@
 package it.contrader.service;
 
 import it.contrader.converter.DatiAnagraficiConverter;
-<<<<<<< HEAD
 import it.contrader.dao.DatiAnagraficiDAO;
 import it.contrader.dto.DatiAnagraficiDTO;
 import it.contrader.dto.UserDTO;
 import it.contrader.model.DatiAnagrafici;
-=======
-import it.contrader.dto.DatiAnagraficiDTO;
->>>>>>> fd267c7 (restore first Application.java)
 
 import java.util.List;
 
 public class DatiAnagraficiService {
 
-<<<<<<< HEAD
     private DatiAnagraficiDAO datiAnagraficiDAO;
     private DatiAnagraficiConverter datiAnagraficiConverter;
 
@@ -45,14 +40,4 @@ public class DatiAnagraficiService {
         // Converte un userDTO in entità e lo passa allo userDAO per la modifica
         return datiAnagraficiDAO.update(datiAnagraficiConverter.toEntity(dto));
     }
-=======
-    private DatiAnagraficiDTO datiAnagraficiDTO;
-    private DatiAnagraficiConverter datiAnagraficiConverter;
-
-    public DatiAnagraficiService(){
-        this.datiAnagraficiDTO= new DatiAnagraficiDTO();
-        this.datiAnagraficiConverter= new DatiAnagraficiConverter();
-
-    }
->>>>>>> fd267c7 (restore first Application.java)
 }

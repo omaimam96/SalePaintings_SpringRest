@@ -2,11 +2,7 @@ package it.contrader.dto;
 
 import java.util.Date;
 
-<<<<<<< HEAD
 public class DatiAnagraficiDTO{
-=======
-public class DatiAnagraficiDTO {
->>>>>>> fd267c7 (restore first Application.java)
 
     private int id;
     private String nome;
@@ -17,10 +13,7 @@ public class DatiAnagraficiDTO {
     private String provincia;
     private String cittaResidenza;
     private String indirizzo;
-<<<<<<< HEAD
     private int user;
-=======
->>>>>>> fd267c7 (restore first Application.java)
 
     public DatiAnagraficiDTO(){
 
@@ -38,7 +31,6 @@ public class DatiAnagraficiDTO {
 
 
     }
-<<<<<<< HEAD
     public DatiAnagraficiDTO(int id, String nome, String cognome, String genere, Date datadinascita, String nazione,
                              String provincia, String cittaResidenza, String indirizzo,int user) {
         this.id=id;
@@ -51,21 +43,6 @@ public class DatiAnagraficiDTO {
         this.cittaResidenza = cittaResidenza;
         this.indirizzo = indirizzo;
         this.user=user;
-=======
-    public DatiAnagraficiDTO(int id,String nome, String cognome,String genere, Date datadinascita,
-                             String nazione,String provincia,String cittaResidenza, String indirizzo){
-        this.id= id;
-        this.nome= nome;
-        this.cognome= cognome;
-        this.genere= genere;
-        this.datadinascita= datadinascita;
-        this.nazione= nazione;
-        this.provincia= provincia;
-        this.cittaResidenza= cittaResidenza;
-        this.indirizzo= indirizzo;
-
-
->>>>>>> fd267c7 (restore first Application.java)
     }
 
     public int getId() {
@@ -76,7 +53,6 @@ public class DatiAnagraficiDTO {
         this.id = id;
     }
 
-<<<<<<< HEAD
     public int getUser() {
         return user;
     }
@@ -85,8 +61,6 @@ public class DatiAnagraficiDTO {
         this.user = user;
     }
 
-=======
->>>>>>> fd267c7 (restore first Application.java)
     public String getNome() {
         return nome;
     }
@@ -153,11 +127,7 @@ public class DatiAnagraficiDTO {
 
     @Override
     public String toString() {
-<<<<<<< HEAD
         return  "\t"+nome + "\t"  + cognome +"\t\t" +  genere  + "\t\t" + datadinascita + "\t\t" + nazione+ "\t\t" +
-=======
-        return  id+"\t"+nome + "\t"  + cognome +"\t\t" +  genere  + "\t\t" + datadinascita + "\t\t" + nazione+ "\t\t" +
->>>>>>> fd267c7 (restore first Application.java)
                 provincia+ "\t\t" +cittaResidenza+ "\t\t" +indirizzo;
     }
 }
