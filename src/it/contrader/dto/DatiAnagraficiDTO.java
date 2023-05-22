@@ -13,7 +13,6 @@ public class DatiAnagraficiDTO {
     private String provincia;
     private String cittaResidenza;
     private String indirizzo;
-    private int user;
 
     public DatiAnagraficiDTO(){
 
@@ -31,18 +30,19 @@ public class DatiAnagraficiDTO {
 
 
     }
-    public DatiAnagraficiDTO(int id, String nome, String cognome, String genere, Date datadinascita, String nazione,
-                             String provincia, String cittaResidenza, String indirizzo,int user) {
-        this.id=id;
-        this.nome = nome;
-        this.cognome = cognome;
-        this.genere = genere;
-        this.datadinascita = datadinascita;
-        this.nazione = nazione;
-        this.provincia = provincia;
-        this.cittaResidenza = cittaResidenza;
-        this.indirizzo = indirizzo;
-        this.user=user;
+    public DatiAnagraficiDTO(int id,String nome, String cognome,String genere, Date datadinascita,
+                             String nazione,String provincia,String cittaResidenza, String indirizzo){
+        this.id= id;
+        this.nome= nome;
+        this.cognome= cognome;
+        this.genere= genere;
+        this.datadinascita= datadinascita;
+        this.nazione= nazione;
+        this.provincia= provincia;
+        this.cittaResidenza= cittaResidenza;
+        this.indirizzo= indirizzo;
+
+
     }
 
     public int getId() {
@@ -51,14 +51,6 @@ public class DatiAnagraficiDTO {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getUser() {
-        return user;
-    }
-
-    public void setUser(int user) {
-        this.user = user;
     }
 
     public String getNome() {
@@ -127,7 +119,7 @@ public class DatiAnagraficiDTO {
 
     @Override
     public String toString() {
-        return  "\t"+nome + "\t"  + cognome +"\t\t" +  genere  + "\t\t" + datadinascita + "\t\t" + nazione+ "\t\t" +
+        return  id+"\t"+nome + "\t"  + cognome +"\t\t" +  genere  + "\t\t" + datadinascita + "\t\t" + nazione+ "\t\t" +
                 provincia+ "\t\t" +cittaResidenza+ "\t\t" +indirizzo;
     }
 }
