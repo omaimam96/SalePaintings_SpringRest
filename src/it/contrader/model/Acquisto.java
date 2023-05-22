@@ -68,6 +68,6 @@ public class Acquisto {
 
     @Override
     public String toString() {
-            return  idOrdine + "\t"  + dataOrdine +"\t\t" +   prezzo + "\t\t" + quadro+ "\t\t"+idUser;
+        return super.toString();
     }
 }
