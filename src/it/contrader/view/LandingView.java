@@ -17,7 +17,7 @@ public class LandingView extends AbstractView {
      */
     public void showOptions() {
 
-        System.out.println("----- .:SALE::PAINTINGS:. ----");
+        System.out.println("----- .:SALE::PAINTINGS:. ---- PROVA");
 
         System.out.println(" [L]ogin [R]egister");
         this.choice = getInput();
