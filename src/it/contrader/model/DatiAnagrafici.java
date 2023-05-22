@@ -41,14 +41,6 @@ public class DatiAnagrafici {
         this.indirizzo = indirizzo;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -115,7 +107,7 @@ public class DatiAnagrafici {
 
     @Override
     public String toString() {
-        return  id+"\t"+nome + "\t"  + cognome +"\t\t" +  genere  + "\t\t" + datadinascita + "\t\t" + nazione+ "\t\t" +
+        return  nome + "\t"  + cognome +"\t\t" +  genere  + "\t\t" + datadinascita + "\t\t" + nazione+ "\t\t" +
                 provincia+ "\t\t" +cittaResidenza+ "\t\t" +indirizzo;
     }
 
