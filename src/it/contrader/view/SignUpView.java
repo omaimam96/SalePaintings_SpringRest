@@ -9,10 +9,6 @@ public class SignUpView extends AbstractView {
 
     private String password;
 
-    private String usertype;
-
-    private final String mode = "INSERT";
-
     public void showResults(Request request) {
 
     }
@@ -22,9 +18,6 @@ public class SignUpView extends AbstractView {
     public void showOptions() {
 
         System.out.println("----- .:REGISTER:. ----");
-
-        System.out.println("[A]dmin [U]ser");
-        this.usertype = getInput();
 
         System.out.println(" Nome utente:");
         this.username = getInput();
@@ -40,18 +33,10 @@ public class SignUpView extends AbstractView {
 
         Request request = new Request();
 
-        if(usertype.equals("a")){
-            usertype="ADMIN";
-        } else  {
-            usertype="USER";
-        }
-
-        request.put("usertype", usertype);
         request.put("username", username);
         request.put("password", password);
-        request.put("mode", mode);
 
-        MainDispatcher.getInstance().callAction("User", "doControl", request);
+        MainDispatcher.getInstance().callAction("Home", "doControl", request);
     }
 
 
