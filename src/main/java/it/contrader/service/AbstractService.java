@@ -14,8 +14,8 @@ import it.contrader.converter.Converter;
  * 
  * @author Vittorio Valent & Girolamo Murdaca
  *
- * @param <Entity>
- * @param <DTO>
+ * @param
+ * @param
  * 
  * @see ServiceDTO
  */

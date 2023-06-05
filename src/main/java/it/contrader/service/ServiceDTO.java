@@ -6,7 +6,7 @@ package it.contrader.service;
  * 
  * @author Vittorio Valent & Girolamo Murdaca
  *
- * @param <DTO>
+ * @param
  * 
  * @see AbstractService
  */

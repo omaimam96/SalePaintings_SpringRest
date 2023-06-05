@@ -17,7 +17,7 @@ import it.contrader.service.ServiceDTO;
  * 
  * @author Vittorio Valent & Girolamo Murdaca
  *
- *@param <DTO>
+ *@param
  *
 
  * 
