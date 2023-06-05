@@ -34,8 +34,9 @@ public abstract class AbstractController <DTO>{
 	}
 	
 	@DeleteMapping("/delete")
-	public void delete(@RequestParam("id") long id) {
+	public String delete(@RequestParam("id") long id) {
 		service.delete(id);
+		return "DELETE_OK";
 	}
 	
 	@PutMapping("/update")
