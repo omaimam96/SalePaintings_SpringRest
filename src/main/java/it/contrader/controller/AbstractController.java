@@ -46,12 +46,12 @@ public abstract class AbstractController <DTO>{
 	
 	@PostMapping("/insert")
 	public DTO insert (@RequestBody DTO dto) {
-		service.insert(dto);
-		return dto;
+		return service.insert(dto);
+
 	}
 	
 	@GetMapping("/read")
-	public DTO read(long id) {
+	public DTO read(@RequestParam("id") long id) {
 		return service.read(id);
 	}
 }
