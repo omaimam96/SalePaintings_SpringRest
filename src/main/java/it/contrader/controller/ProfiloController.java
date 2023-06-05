@@ -37,7 +37,7 @@ public class ProfiloController extends  AbstractController<ProfiloDTO> {
     }
 
     @GetMapping("/read")
-    public ProfiloDTO read(@RequestParam long id){
+    public ProfiloDTO read(@RequestParam("id") long id){
         return service.read(id);
     }
 

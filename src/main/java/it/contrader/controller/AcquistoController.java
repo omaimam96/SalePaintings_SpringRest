@@ -14,10 +14,7 @@ import it.contrader.service.ProfiloService;
 import it.contrader.service.QuadroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 @RestController
@@ -41,85 +38,35 @@ public class AcquistoController extends AbstractController<AcquistoDTO>{
     private UserConverter userConverter;
     @Autowired
     private QuadroConverter quadroConverter;
+    @Autowired
+    private AcquistoDTO acquistoDTO;
 
 
-    @GetMapping("/getall")
-    public String getAll(HttpServletRequest request) {
-        UserDTO userDTO= (UserDTO) request.getSession().getAttribute("user");
 
-        ProfiloDTO profiloDTO=profiloConverter.toDTO(profiloService.readByUser(userConverter.toEntity(userDTO)));
-        request.getSession().setAttribute("profiloDTO",profiloDTO);
-        setAll(request);
-        return "/acquisto/acquistos";
-
-
-    }
-
-    @GetMapping("/delete")
-    public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
+    @DeleteMapping("/delete")
+    public String delete(@RequestParam("id") long id) {
         service.delete(id);
-        setAll(request);
-        return "/acquisto/acquistos";
+        return "DELETE_OK";
     }
 
-    @GetMapping("/preupdate")
-    public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
-        request.getSession().setAttribute("dto", service.read(id));
-        return "updateacquisto";
+
+    @PatchMapping("/update")
+    public AcquistoDTO update(@RequestBody AcquistoDTO acquistoDTO){
+        service.update(acquistoDTO);
+        return acquistoDTO;
     }
 
-    @PostMapping("/update")
-    public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("dataOrdine") String dataOrdine) {
-
-        AcquistoDTO dto = new AcquistoDTO();
-        dto.setId(id);
-        dto.setDataOrdine(dataOrdine);
-        service.update(dto);
-        setAll(request);
-        return "acquistos";
-
-    }
-
-    @GetMapping("/ordine")
-    public String ordine(HttpServletRequest request, @RequestParam("id") Long id) {
-        UserDTO userDTO= (UserDTO) request.getSession().getAttribute("user");
-        request.getSession().setAttribute("dto", quadroService.read(id));
-
-        //ReadByID da modificare
-        request.getSession().setAttribute("profiloDTO",profiloConverter.toDTO(profiloService.readByUser(userConverter.toEntity(userDTO))));
-
-
-        return "/acquisto/insertacquisto";
-    }
 
     @PostMapping("/insert")
-    public String insert(HttpServletRequest request, @RequestParam("dataOrdine") String dataOrdine,@RequestParam("idquadro") Long quadro,@RequestParam("idprofilo") Long profilo) {
-
-        //DTO per profilo e quadro
-        ProfiloDTO profiloDTO=profiloService.read(profilo);
-        QuadroDTO quadroDTO=quadroService.read(quadro);
-
-        //DTO da inserire
-        AcquistoDTO dto = new AcquistoDTO();
-        dto.setDataOrdine(dataOrdine);
-        dto.setProfilo(profiloConverter.toEntity(profiloDTO));
-        dto.setQuadro(quadroConverter.toEntity(quadroDTO));
-
-        service.insert(dto);
-        quadroDTO.setBuy(true);
-        quadroService.update(quadroDTO);
-        setAll(request);
-        return "/acquisto/acquistos";
+    public AcquistoDTO insert(@RequestBody AcquistoDTO acquistoDTO){
+        service.insert(acquistoDTO);
+        return acquistoDTO;
     }
 
     @GetMapping("/read")
-    public String read(HttpServletRequest request, @RequestParam("id") Long id) {
-        request.getSession().setAttribute("dto", service.read(id));
-        return "readacquisto";
+    public AcquistoDTO read(@RequestParam("id") long id){
+        return service.read(id);
     }
 
-    private void setAll(HttpServletRequest request) {
-        request.getSession().setAttribute("list", service.getAll());
-    }
 }
 
