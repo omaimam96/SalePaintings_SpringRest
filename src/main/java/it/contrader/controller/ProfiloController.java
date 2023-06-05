@@ -26,10 +26,20 @@ public class ProfiloController extends  AbstractController<ProfiloDTO> {
 
     @PostMapping("/insert")
     public ProfiloDTO insert(@RequestBody ProfiloDTO profiloDTO){
-        User user = userConverter.toEntity(userService.findById(profiloDTO.getUser().getId()));
-        profiloDTO = new ProfiloDTO(profiloDTO.getId(), profiloDTO.getNome(), profiloDTO.getCognome(), profiloDTO.getGenere(), profiloDTO.getEmail(), profiloDTO.getDataNascita(), profiloDTO.getNazione(), profiloDTO.getProvincia(), profiloDTO.getCittaResidenza(), profiloDTO.getIndirizzo(), user );
         service.insert(profiloDTO);
         return profiloDTO;
     }
+
+    @PatchMapping("/update")
+    public ProfiloDTO update(@RequestBody ProfiloDTO profiloDTO){
+        service.update(profiloDTO);
+        return profiloDTO;
+    }
+
+    @GetMapping("/read")
+    public ProfiloDTO read(@RequestParam long id){
+        return service.read(id);
+    }
+
 
 }
