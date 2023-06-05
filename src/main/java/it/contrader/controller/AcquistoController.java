@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/acquisto")
 @CrossOrigin(origins = "http://localhost:4200")
 public class AcquistoController extends AbstractController<AcquistoDTO>{
 
@@ -38,8 +38,6 @@ public class AcquistoController extends AbstractController<AcquistoDTO>{
     private UserConverter userConverter;
     @Autowired
     private QuadroConverter quadroConverter;
-    @Autowired
-    private AcquistoDTO acquistoDTO;
 
 
 

@@ -18,7 +18,7 @@ public class Acquisto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String dataOrdine;
+    private Date dataOrdine;
 
     @OneToOne
     private Quadro quadro;
