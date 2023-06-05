@@ -25,4 +25,8 @@ public class UserService extends AbstractService<User,UserDTO> {
 		return converter.toDTO(((UserRepository)repository).findByUsernameAndPassword(username, password));
 	}
 
+	public UserDTO findById (long id){
+		return converter.toDTO(((UserRepository)repository).findById(id));
+	}
+
 }

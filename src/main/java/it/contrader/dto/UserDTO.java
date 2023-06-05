@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
  * 
  * @author Vittorio Valent & Girolamo Murdaca
  * 
- *@see User
+ *@see
  */
 @Data
 @AllArgsConstructor

@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
  * 
  * @author Vittorio Valent & Girolamo Murdaca
  * 
- * @see UserDTO
+ * @see
  */
 @Data
 @Entity

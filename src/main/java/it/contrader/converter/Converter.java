@@ -8,8 +8,8 @@ import java.util.List;
  * 
  * @author Vittorio Valent & Girolamo Murdaca
  *
- * @param <Entity>
- * @param <DTO>
+ * @param
+ * @param
  * 
  * @see AbstractConverter
  */
