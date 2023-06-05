@@ -13,6 +13,4 @@ import org.springframework.stereotype.Repository;
 @Transactional
 public interface QuadroRepository extends CrudRepository<Quadro, Long>{
 
-    Quadro findById(long id);
-
 }
