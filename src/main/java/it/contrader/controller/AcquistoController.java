@@ -41,20 +41,6 @@ public class AcquistoController extends AbstractController<AcquistoDTO>{
 
 
 
-    @DeleteMapping("/delete")
-    public String delete(@RequestParam("id") long id) {
-        service.delete(id);
-        return "DELETE_OK";
-    }
-
-
-    @PatchMapping("/update")
-    public AcquistoDTO update(@RequestBody AcquistoDTO acquistoDTO){
-        service.update(acquistoDTO);
-        return acquistoDTO;
-    }
-
-
     @PostMapping("/insert")
     public AcquistoDTO insert(@RequestBody AcquistoDTO acquistoDTO){
         service.insert(acquistoDTO);

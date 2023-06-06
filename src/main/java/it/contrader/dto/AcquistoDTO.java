@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
+import java.sql.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,7 +15,7 @@ public class AcquistoDTO {
 
     private Long id;
 
-    private String dataOrdine;
+    private Date dataOrdine;
 
     private Quadro quadro;
 
