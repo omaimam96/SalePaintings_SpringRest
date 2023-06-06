@@ -1,6 +1,7 @@
 package it.contrader.service;
 
 import it.contrader.converter.UserConverter;
+import it.contrader.dao.ProfiloRepository;
 import it.contrader.dto.ProfiloDTO;
 import it.contrader.model.Profilo;
 import it.contrader.model.User;
@@ -16,6 +17,8 @@ public class ProfiloService extends AbstractService<Profilo, ProfiloDTO>{
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private ProfiloRepository profiloRepository;
 
 
     public ProfiloDTO insert(ProfiloDTO profiloDTO) {
@@ -26,6 +29,9 @@ public class ProfiloService extends AbstractService<Profilo, ProfiloDTO>{
                 profiloDTO.getProvincia(), profiloDTO.getCittaResidenza(),
                 profiloDTO.getIndirizzo(), profiloDTO.getUser());
         return converter.toDTO(repository.save(converter.toEntity(profiloDTO)));
+    }
+    public Profilo readByUser(User user) {
+        return profiloRepository.findByUser(user);
     }
 
 }
