@@ -33,5 +33,7 @@ public class ProfiloService extends AbstractService<Profilo, ProfiloDTO>{
     public Profilo readByUser(User user) {
         return profiloRepository.findByUser(user);
     }
-
+    public Profilo readByUserId(long userId){
+        return profiloRepository.findByUserId(userId);
+    }
 }

@@ -41,9 +41,4 @@ public class Profilo {
     private User user;
 
 
-
-
-
-
-
 }

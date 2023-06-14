@@ -19,7 +19,8 @@ public class AcquistoService extends AbstractService<Acquisto, AcquistoDTO> {
     @Autowired
     private AcquistoRepository repository;
     public AcquistoDTO insert(AcquistoDTO acquistoDTO){
-        acquistoDTO=new AcquistoDTO(acquistoDTO.getId(),acquistoDTO.getDataOrdine(),acquistoDTO.getQuadro(),acquistoDTO.getProfilo());
+        acquistoDTO=new AcquistoDTO(acquistoDTO.getId(),acquistoDTO.getDataOrdine()
+                ,acquistoDTO.getQuadro(),acquistoDTO.getProfilo());
         return converter.toDTO(repository.save(converter.toEntity(acquistoDTO)));
     }
 }

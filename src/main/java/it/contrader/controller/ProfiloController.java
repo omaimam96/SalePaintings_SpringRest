@@ -1,9 +1,11 @@
 package it.contrader.controller;
 
+import it.contrader.converter.ProfiloConverter;
 import it.contrader.converter.UserConverter;
 import it.contrader.dto.ProfiloDTO;
 import it.contrader.dto.UserDTO;
 import it.contrader.model.User;
+import it.contrader.service.ProfiloService;
 import it.contrader.service.ServiceDTO;
 import it.contrader.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +17,15 @@ import org.springframework.web.bind.annotation.*;
 public class ProfiloController extends  AbstractController<ProfiloDTO> {
 
     @Autowired
-    private ServiceDTO<ProfiloDTO> service;
+    private ProfiloService service;
 
     @Autowired
     private UserService userService;
 
     @Autowired
     private UserConverter userConverter;
+    @Autowired
+    private ProfiloConverter profiloConverter;
 
 
     @PostMapping("/insert")
@@ -40,6 +44,9 @@ public class ProfiloController extends  AbstractController<ProfiloDTO> {
     public ProfiloDTO read(@RequestParam("id") long id){
         return service.read(id);
     }
-
+    @GetMapping("/readByUser")
+    public ProfiloDTO reads(@RequestParam("id")User userId){
+        return profiloConverter.toDTO(service.readByUserId(userId.getId()));
+    }
 
 }

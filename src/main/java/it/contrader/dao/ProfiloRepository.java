@@ -12,6 +12,7 @@ import javax.transaction.Transactional;
 public interface ProfiloRepository extends CrudRepository<Profilo, Long> {
 
     Profilo findByUser(User userDTO);
+    Profilo findByUserId(long userId);
 
 
 }
