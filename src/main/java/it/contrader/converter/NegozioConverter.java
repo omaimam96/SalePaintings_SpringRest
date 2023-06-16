@@ -13,8 +13,8 @@ public class NegozioConverter extends AbstractConverter<Negozio, NegozioDTO>{
         if (negozioDTO != null) {
             negozio = new Negozio(negozioDTO.getId(), negozioDTO.getNomeNegozio(),
                     negozioDTO.getIndirizzoNegozio(), negozioDTO.getProvinciaNegozio(),
-                    negozioDTO.getNazioneNegozio(), negozioDTO.getDescrizioneNegozio(),
-                    negozioDTO.getCittaResidenzaNegozio(), negozioDTO.getUser());
+                    negozioDTO.getNazioneNegozio(),negozioDTO.getDescrizioneNegozio(),
+                    negozioDTO.getCittaResidenzaNegozio(),negozioDTO.getUser());
 
         }
         return negozio;
@@ -27,7 +27,7 @@ public class NegozioConverter extends AbstractConverter<Negozio, NegozioDTO>{
                 negozioDTO=new NegozioDTO(negozio.getId(), negozio.getNomeNegozio(),
                         negozio.getIndirizzoNegozio(), negozio.getProvinciaNegozio(),
                         negozio.getNazioneNegozio(),negozio.getDescrizioneNegozio(),
-                        negozio.getCittaResidenzaNegozio(), negozio.getUser());
+                        negozio.getCittaResidenzaNegozio(),negozio.getUser());
         }
             return negozioDTO;
 

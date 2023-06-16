@@ -20,8 +20,8 @@ public class NegozioDTO {
     private String indirizzoNegozio;
     private String provinciaNegozio;
     private String nazioneNegozio;
-    private String cittaResidenzaNegozio;
     private String descrizioneNegozio;
+    private String cittaResidenzaNegozio;
     private User user;
 
 

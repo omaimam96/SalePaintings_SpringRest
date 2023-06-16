@@ -14,10 +14,13 @@ public class NegozioService extends AbstractService<Negozio, NegozioDTO >{
         return negozioRepository.findByUserId(userId);
     }
     public NegozioDTO insert(NegozioDTO negozioDTO){
+        return converter.toDTO(negozioRepository.save(converter.toEntity(negozioDTO)));
+    }
+    public NegozioDTO update(NegozioDTO negozioDTO){
         negozioDTO= new NegozioDTO(negozioDTO.getId(), negozioDTO.getNomeNegozio(),
                 negozioDTO.getIndirizzoNegozio(), negozioDTO.getProvinciaNegozio(),
                 negozioDTO.getNazioneNegozio(),negozioDTO.getDescrizioneNegozio(),
-                negozioDTO.getCittaResidenzaNegozio(),negozioDTO.getUser());
+                negozioDTO.getCittaResidenzaNegozio(), negozioDTO.getUser());
         return converter.toDTO(negozioRepository.save(converter.toEntity(negozioDTO)));
     }
 
