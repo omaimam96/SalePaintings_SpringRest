@@ -4,12 +4,15 @@ import it.contrader.converter.ProfiloConverter;
 import it.contrader.converter.UserConverter;
 import it.contrader.dto.ProfiloDTO;
 import it.contrader.dto.UserDTO;
+import it.contrader.model.Profilo;
 import it.contrader.model.User;
 import it.contrader.service.ProfiloService;
 import it.contrader.service.ServiceDTO;
 import it.contrader.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/profilo")
@@ -49,4 +52,8 @@ public class ProfiloController extends  AbstractController<ProfiloDTO> {
         return profiloConverter.toDTO(service.readByUserId(userId.getId()));
     }
 
+    @GetMapping("/readByUserId")
+    public List<Profilo> getAllByUser(){
+        return service.getAllByUser();
+    }
 }
