@@ -25,7 +25,7 @@ public class NegozioController extends AbstractController<NegozioDTO>{
         negozioService.insert(negozioDTO);
         return negozioDTO;
     }
-    @PatchMapping("/update")
+    @PutMapping("/update")
     public NegozioDTO update(@RequestBody NegozioDTO negozioDTO){
         negozioService.update(negozioDTO);
         return negozioDTO;

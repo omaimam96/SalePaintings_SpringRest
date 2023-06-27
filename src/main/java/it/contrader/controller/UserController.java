@@ -1,8 +1,11 @@
 package it.contrader.controller;
 
+import it.contrader.converter.NegozioConverter;
 import it.contrader.converter.ProfiloConverter;
 import it.contrader.converter.UserConverter;
+import it.contrader.dto.NegozioDTO;
 import it.contrader.dto.ProfiloDTO;
+import it.contrader.service.NegozioService;
 import it.contrader.service.ProfiloService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -37,6 +40,10 @@ public class UserController extends AbstractController<UserDTO>{
 	private ProfiloConverter profiloConverter;
 	@Autowired
 	private UserConverter userConverter;
+	@Autowired
+	private NegozioConverter negozioConverter;
+	@Autowired
+	private NegozioService negozioService;
 
 
 	//POST Angular a UserDTO
@@ -48,7 +55,10 @@ public class UserController extends AbstractController<UserDTO>{
 	public String delete(@RequestParam("id") long id){
 		ProfiloDTO profiloDTO=profiloConverter.toDTO(profiloService.readByUser(userConverter.toEntity(userService.read(id))));
 		profiloDTO.setUser(null);
+		NegozioDTO negozioDTO =negozioConverter.toDTO(negozioService.readByUserId(userConverter.toEntity(userService.read(id)).getId()));
+		negozioDTO.setUser(null);
 		profiloService.update(profiloDTO);
+		negozioService.update(negozioDTO);
 		userService.delete(id);
 		return "DELETE_OK";
 	}

@@ -34,7 +34,7 @@ public class ProfiloController extends  AbstractController<ProfiloDTO> {
         return profiloDTO;
     }
 
-    @PatchMapping("/update")
+    @PutMapping("/update")
     public ProfiloDTO update(@RequestBody ProfiloDTO profiloDTO){
         service.update(profiloDTO);
         return profiloDTO;
