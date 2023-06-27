@@ -8,10 +8,12 @@ import it.contrader.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProfiloService extends AbstractService<Profilo, ProfiloDTO>{
 
-
+    private boolean i=true;
     @Autowired
     private UserConverter userConverter;
 
@@ -36,4 +38,8 @@ public class ProfiloService extends AbstractService<Profilo, ProfiloDTO>{
     public Profilo readByUserId(long userId){
         return profiloRepository.findByUserId(userId);
     }
+
+   public List<Profilo> getAllByUser(){
+        return profiloRepository.findByUseridNN();
+   }
 }
