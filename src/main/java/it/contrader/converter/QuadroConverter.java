@@ -33,7 +33,7 @@ public class QuadroConverter extends AbstractConverter<Quadro, QuadroDTO> {
     public QuadroDTO toDTO(Quadro quadro) {
         QuadroDTO quadroDTO =null;
         if (quadro != null) {
-            quadroDTO = new QuadroDTO(quadro.getId(),quadro.getNomeQuadro(),quadro.getTipologia(),quadro.getCosto(),quadro.getOrientamento(),quadro.getDescrizione(),quadro.getProfilo(),quadro.isVenduto(), quadroDTO.getCodiceProdotto(),quadroDTO.getAcquisto());
+            quadroDTO = new QuadroDTO(quadro.getId(),quadro.getNomeQuadro(),quadro.getTipologia(),quadro.getCosto(),quadro.getOrientamento(),quadro.getDescrizione(),quadro.getProfilo(),quadro.isVenduto(), quadro.getCodiceProdotto(),quadro.getAcquisto());
 
         }
         return quadroDTO;
