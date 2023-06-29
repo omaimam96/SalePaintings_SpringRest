@@ -17,7 +17,7 @@ public class AcquistoDTO {
 
     private Date dataOrdine;
 
-    private Quadro quadro;
+    private String codiceAcquisto;
 
     private Profilo profilo;
 

@@ -17,14 +17,16 @@ public class QuadroService extends AbstractService<Quadro, QuadroDTO> {
         quadroDTO=new QuadroDTO(quadroDTO.getId(),quadroDTO.getNomeQuadro()
                 ,quadroDTO.getTipologia(),quadroDTO.getCosto()
                 ,quadroDTO.getOrientamento(),quadroDTO.getDescrizione()
-                ,quadroDTO.getProfilo(),quadroDTO.isVenduto());
+                ,quadroDTO.getProfilo(),quadroDTO.isVenduto()
+                ,quadroDTO.getCodiceQuadro(),quadroDTO.getAcquisto());
         return converter.toDTO(repository.save(converter.toEntity(quadroDTO)));
     }
     public QuadroDTO update(QuadroDTO quadroDTO){
         quadroDTO=new QuadroDTO(quadroDTO.getId(),quadroDTO.getNomeQuadro()
                 ,quadroDTO.getTipologia(),quadroDTO.getCosto()
                 ,quadroDTO.getOrientamento(),quadroDTO.getDescrizione()
-                ,quadroDTO.getProfilo(),quadroDTO.isVenduto());
+                ,quadroDTO.getProfilo(),quadroDTO.isVenduto()
+                ,quadroDTO.getCodiceQuadro(),quadroDTO.getAcquisto());
         return converter.toDTO(repository.save(converter.toEntity(quadroDTO)));
     }
 }

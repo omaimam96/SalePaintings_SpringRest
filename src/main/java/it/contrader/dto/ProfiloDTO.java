@@ -37,6 +37,8 @@ public class ProfiloDTO {
 
     private String indirizzo;
 
+    private Date dataCreazione;
+
     private User user;
 
 }
