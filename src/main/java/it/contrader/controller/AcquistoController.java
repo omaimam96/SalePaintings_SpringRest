@@ -1,5 +1,6 @@
 package it.contrader.controller;
 
+import it.contrader.converter.AcquistoConverter;
 import it.contrader.converter.ProfiloConverter;
 import it.contrader.converter.QuadroConverter;
 import it.contrader.converter.UserConverter;
@@ -36,6 +37,8 @@ public class AcquistoController extends AbstractController<AcquistoDTO>{
 
     @Autowired
     private ProfiloConverter profiloConverter;
+    @Autowired
+    private AcquistoConverter converter;
 
     @Autowired
     private UserConverter userConverter;
@@ -58,6 +61,11 @@ public class AcquistoController extends AbstractController<AcquistoDTO>{
     @GetMapping("/readacquisti")
     public List<Acquisto> readacquisti(@RequestParam("id")long id){
         return service.findAcquisti(id);
+    }
+
+    @GetMapping("/readacquisto")
+    public AcquistoDTO readacquisto(@RequestParam("codiceAcquisto")String codiceAcquisto){
+        return converter.toDTO(service.readAcquisto(codiceAcquisto));
     }
 }
 

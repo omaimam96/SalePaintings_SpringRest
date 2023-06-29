@@ -26,5 +26,7 @@ public class AcquistoService extends AbstractService<Acquisto, AcquistoDTO> {
         return converter.toDTO(repository.save(converter.toEntity(acquistoDTO)));
     }
 
+    public Acquisto readAcquisto(String codiceAcquisto){return repository.findAcquistoByCodice(codiceAcquisto);}
+
     public List<Acquisto> findAcquisti(long userId){return repository.findByAcquisto(userId);}
 }

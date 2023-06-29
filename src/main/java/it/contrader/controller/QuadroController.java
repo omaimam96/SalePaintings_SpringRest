@@ -43,7 +43,7 @@ public class QuadroController extends AbstractController<QuadroDTO>{
         return service.read(id);
     }
 
-    @PatchMapping("/update")
+    @PutMapping("/update")
     public QuadroDTO update(@RequestBody QuadroDTO quadroDTO){
         service.update(quadroDTO);
         return quadroDTO;
