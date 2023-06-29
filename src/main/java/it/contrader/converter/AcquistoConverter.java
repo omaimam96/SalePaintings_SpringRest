@@ -20,7 +20,7 @@ public class AcquistoConverter extends AbstractConverter<Acquisto, AcquistoDTO> 
     public AcquistoDTO toDTO(Acquisto acquisto) {
         AcquistoDTO acquistoDTO = null;
         if(acquisto !=null){
-            acquistoDTO = new AcquistoDTO(acquisto.getId(), acquisto.getDataOrdine(),acquistoDTO.getCodiceAcquisto(),acquisto.getProfilo());
+            acquistoDTO = new AcquistoDTO(acquisto.getId(), acquisto.getDataOrdine(),acquisto.getCodiceAcquisto(),acquisto.getProfilo());
         }
         return acquistoDTO;
     }

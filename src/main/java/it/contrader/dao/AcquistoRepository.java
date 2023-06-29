@@ -16,4 +16,7 @@ public interface AcquistoRepository extends CrudRepository<Acquisto, Long> {
 
     @Query(nativeQuery = true, value="SELECT * FROM acquisto WHERE profilo_id=?;")
     List<Acquisto> findByAcquisto(long userId);
+
+    @Query(nativeQuery = true, value="SELECT * FROM acquisto WHERE codice_acquisto=?;")
+    Acquisto findAcquistoByCodice(String codiceAcquisto);
 }
