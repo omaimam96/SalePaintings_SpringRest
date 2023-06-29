@@ -64,7 +64,7 @@ public class AcquistoController extends AbstractController<AcquistoDTO>{
     }
 
     @GetMapping("/readacquisto")
-    public AcquistoDTO readAcquisto(@RequestParam("codiceAcquisto")String codiceAcquisto){
+    public AcquistoDTO readacquisto(@RequestParam("codiceAcquisto")String codiceAcquisto){
         return converter.toDTO(service.readAcquisto(codiceAcquisto));
     }
 }
