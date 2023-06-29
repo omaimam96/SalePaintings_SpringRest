@@ -11,7 +11,7 @@ public class AcquistoConverter extends AbstractConverter<Acquisto, AcquistoDTO> 
     public Acquisto toEntity(AcquistoDTO acquistoDTO) {
         Acquisto acquisto = null;
         if(acquistoDTO != null){
-            acquisto = new Acquisto(acquistoDTO.getId(), acquistoDTO.getDataOrdine(),acquistoDTO.getQuadro(),acquistoDTO.getProfilo());
+            acquisto = new Acquisto(acquistoDTO.getId(), acquistoDTO.getDataOrdine(),acquistoDTO.getCodiceAcquisto(),acquistoDTO.getProfilo());
         }
         return acquisto;
     }
@@ -20,7 +20,7 @@ public class AcquistoConverter extends AbstractConverter<Acquisto, AcquistoDTO> 
     public AcquistoDTO toDTO(Acquisto acquisto) {
         AcquistoDTO acquistoDTO = null;
         if(acquisto !=null){
-            acquistoDTO = new AcquistoDTO(acquisto.getId(), acquisto.getDataOrdine(),acquisto.getQuadro(),acquisto.getProfilo());
+            acquistoDTO = new AcquistoDTO(acquisto.getId(), acquisto.getDataOrdine(),acquistoDTO.getCodiceAcquisto(),acquisto.getProfilo());
         }
         return acquistoDTO;
     }

@@ -8,6 +8,7 @@ import it.contrader.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -16,7 +17,6 @@ public class ProfiloService extends AbstractService<Profilo, ProfiloDTO>{
     private boolean i=true;
     @Autowired
     private UserConverter userConverter;
-
     @Autowired
     private UserService userService;
     @Autowired
@@ -29,7 +29,8 @@ public class ProfiloService extends AbstractService<Profilo, ProfiloDTO>{
                 profiloDTO.getGenere(), profiloDTO.getEmail(),
                 profiloDTO.getDataNascita(), profiloDTO.getNazione(),
                 profiloDTO.getProvincia(), profiloDTO.getCittaResidenza(),
-                profiloDTO.getIndirizzo(), profiloDTO.getUser());
+                profiloDTO.getIndirizzo(), profiloDTO.getDataCreazione(),
+                profiloDTO.getUser());
         return converter.toDTO(repository.save(converter.toEntity(profiloDTO)));
     }
     public Profilo readByUser(User user) {
@@ -42,4 +43,6 @@ public class ProfiloService extends AbstractService<Profilo, ProfiloDTO>{
    public List<Profilo> getAllByUser(){
         return profiloRepository.findByUseridNN();
    }
+
+
 }

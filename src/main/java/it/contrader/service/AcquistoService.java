@@ -10,6 +10,8 @@ import it.contrader.dao.AcquistoRepository;
 import it.contrader.dto.AcquistoDTO;
 import it.contrader.model.Acquisto;
 
+import java.util.List;
+
 @Service
 public class AcquistoService extends AbstractService<Acquisto, AcquistoDTO> {
 
@@ -20,7 +22,9 @@ public class AcquistoService extends AbstractService<Acquisto, AcquistoDTO> {
     private AcquistoRepository repository;
     public AcquistoDTO insert(AcquistoDTO acquistoDTO){
         acquistoDTO=new AcquistoDTO(acquistoDTO.getId(),acquistoDTO.getDataOrdine()
-                ,acquistoDTO.getQuadro(),acquistoDTO.getProfilo());
+                ,acquistoDTO.getCodiceAcquisto(),acquistoDTO.getProfilo());
         return converter.toDTO(repository.save(converter.toEntity(acquistoDTO)));
     }
+
+    public List<Acquisto> findAcquisti(long userId){return repository.findByAcquisto(userId);}
 }

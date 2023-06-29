@@ -24,7 +24,7 @@ public class QuadroConverter extends AbstractConverter<Quadro, QuadroDTO> {
     public Quadro toEntity(QuadroDTO quadroDTO) {
         Quadro quadro = null;
         if (quadroDTO != null) {
-            quadro = new Quadro(quadroDTO.getId(),quadroDTO.getNomeQuadro(),quadroDTO.getTipologia(),quadroDTO.getCosto(),quadroDTO.getOrientamento(),quadroDTO.getDescrizione(),quadroDTO.getProfilo(),quadroDTO.isVenduto());
+            quadro = new Quadro(quadroDTO.getId(),quadroDTO.getNomeQuadro(),quadroDTO.getTipologia(),quadroDTO.getCosto(),quadroDTO.getOrientamento(),quadroDTO.getDescrizione(),quadroDTO.getProfilo(),quadroDTO.isVenduto(), quadroDTO.getCodiceProdotto(),quadroDTO.getAcquisto());
         }
         return quadro;
     }
@@ -33,7 +33,7 @@ public class QuadroConverter extends AbstractConverter<Quadro, QuadroDTO> {
     public QuadroDTO toDTO(Quadro quadro) {
         QuadroDTO quadroDTO =null;
         if (quadro != null) {
-            quadroDTO = new QuadroDTO(quadro.getId(),quadro.getNomeQuadro(),quadro.getTipologia(),quadro.getCosto(),quadro.getOrientamento(),quadro.getDescrizione(),quadro.getProfilo(),quadro.isVenduto());
+            quadroDTO = new QuadroDTO(quadro.getId(),quadro.getNomeQuadro(),quadro.getTipologia(),quadro.getCosto(),quadro.getOrientamento(),quadro.getDescrizione(),quadro.getProfilo(),quadro.isVenduto(), quadroDTO.getCodiceProdotto(),quadroDTO.getAcquisto());
 
         }
         return quadroDTO;

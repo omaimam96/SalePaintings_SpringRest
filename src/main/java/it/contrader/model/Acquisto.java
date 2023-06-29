@@ -20,17 +20,9 @@ public class Acquisto {
 
     private Date dataOrdine;
 
-    @OneToOne
-    private Quadro quadro;
+    private String codiceAcquisto;
 
     @ManyToOne
     private Profilo profilo;
-
-
-
-
-
-
-
 
 }

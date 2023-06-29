@@ -37,6 +37,8 @@ public class Profilo {
 
     private String indirizzo;
 
+    private Date dataCreazione;
+
     @OneToOne
     private User user;
 
