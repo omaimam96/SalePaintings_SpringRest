@@ -37,7 +37,7 @@ public class Quadro {
 
     private boolean venduto;
 
-    private String codiceQuadro;
+    private String codiceProdotto;
 
     @ManyToOne
     private Acquisto acquisto;

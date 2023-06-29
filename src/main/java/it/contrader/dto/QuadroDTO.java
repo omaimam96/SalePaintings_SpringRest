@@ -32,7 +32,7 @@ public class QuadroDTO {
 
     private boolean venduto;
 
-    private String codiceQuadro;
+    private String codiceProdotto;
 
     private Acquisto acquisto;
 

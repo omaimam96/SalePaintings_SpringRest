@@ -18,7 +18,7 @@ public class QuadroService extends AbstractService<Quadro, QuadroDTO> {
                 ,quadroDTO.getTipologia(),quadroDTO.getCosto()
                 ,quadroDTO.getOrientamento(),quadroDTO.getDescrizione()
                 ,quadroDTO.getProfilo(),quadroDTO.isVenduto()
-                ,quadroDTO.getCodiceQuadro(),quadroDTO.getAcquisto());
+                ,quadroDTO.getCodiceProdotto(),quadroDTO.getAcquisto());
         return converter.toDTO(repository.save(converter.toEntity(quadroDTO)));
     }
     public QuadroDTO update(QuadroDTO quadroDTO){
@@ -26,7 +26,7 @@ public class QuadroService extends AbstractService<Quadro, QuadroDTO> {
                 ,quadroDTO.getTipologia(),quadroDTO.getCosto()
                 ,quadroDTO.getOrientamento(),quadroDTO.getDescrizione()
                 ,quadroDTO.getProfilo(),quadroDTO.isVenduto()
-                ,quadroDTO.getCodiceQuadro(),quadroDTO.getAcquisto());
+                ,quadroDTO.getCodiceProdotto(),quadroDTO.getAcquisto());
         return converter.toDTO(repository.save(converter.toEntity(quadroDTO)));
     }
 }
