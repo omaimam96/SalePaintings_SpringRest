@@ -20,7 +20,7 @@ public class NegozioController extends AbstractController<NegozioDTO>{
     public NegozioDTO reads(@RequestParam("id") User userId){
         return negozioConverter.toDTO(negozioService.readByUserId(userId.getId()));
     }
-    @PutMapping("/insert")
+    @PostMapping("/insert")
     public NegozioDTO insert(@RequestBody NegozioDTO negozioDTO){
         negozioService.insert(negozioDTO);
         return negozioDTO;

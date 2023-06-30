@@ -33,7 +33,7 @@ public class QuadroController extends AbstractController<QuadroDTO>{
     //POST Angular a UserDTO
 
 
-    @PutMapping("/insert")
+    @PostMapping("/insert")
     public QuadroDTO insert(@RequestBody QuadroDTO quadroDTO){
         service.insert(quadroDTO);
         return quadroDTO;
