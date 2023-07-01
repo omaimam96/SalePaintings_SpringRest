@@ -32,7 +32,7 @@ public class QuadroService extends AbstractService<Quadro, QuadroDTO> {
         return QRepository.readByDisp();
     }
 
-    public List<Quadro> getAllByFilter(String tipologia, String orientamento, String ricerca, String costo) {
-        return QRepository.getAllByFilter(tipologia, orientamento, ricerca, costo);
+    public List<Quadro> getAllByFilter(String tipologia, String orientamento, String ricerca) {
+        return QRepository.getAllByFilter(tipologia, orientamento, ricerca);
     }
 }
