@@ -55,10 +55,15 @@ public class UserController extends AbstractController<UserDTO>{
 	public String delete(@RequestParam("id") long id){
 		ProfiloDTO profiloDTO=profiloConverter.toDTO(profiloService.readByUser(userConverter.toEntity(userService.read(id))));
 		profiloDTO.setUser(null);
-		NegozioDTO negozioDTO =negozioConverter.toDTO(negozioService.readByUserId(userConverter.toEntity(userService.read(id)).getId()));
-		negozioDTO.setUser(null);
+		try {
+			NegozioDTO negozioDTO =negozioConverter.toDTO(negozioService.readByUserId(userConverter.toEntity(userService.read(id)).getId()));
+			negozioDTO.setUser(null);
+			negozioService.update(negozioDTO);
+		} catch (Exception e) {
+			System.err.print(e);
+		}
+
 		profiloService.update(profiloDTO);
-		negozioService.update(negozioDTO);
 		userService.delete(id);
 		return "DELETE_OK";
 	}
