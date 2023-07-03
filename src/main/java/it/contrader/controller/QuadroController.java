@@ -4,6 +4,7 @@ import it.contrader.converter.ProfiloConverter;
 import it.contrader.dto.ProfiloDTO;
 import it.contrader.dto.QuadroDTO;
 import it.contrader.model.Profilo;
+import it.contrader.model.Quadro;
 import it.contrader.service.ProfiloService;
 import it.contrader.service.QuadroService;
 import it.contrader.service.ServiceDTO;
@@ -53,6 +54,22 @@ public class QuadroController extends AbstractController<QuadroDTO>{
     public String delete(@RequestParam("id") long id) {
         service.delete(id);
         return "DELETE_OK";
+    }
+
+    @GetMapping("/readbydisp")
+    public List<Quadro> readByDisp(){
+        return quadroService.readByDisp();
+    }
+
+    @GetMapping("/getfilter")
+    public List<Quadro> getAllByFilter(@RequestParam String tipologia,
+                                       @RequestParam String orientamento,
+                                       @RequestParam String ricerca,
+                                       @RequestParam String ordine){
+        tipologia="%"+tipologia+"%";
+        orientamento="%"+orientamento+"%";
+        ricerca="%"+ricerca+"%";
+        return quadroService.getAllByFilter(tipologia,orientamento,ricerca, ordine);
     }
 
 

@@ -47,7 +47,7 @@ public class AcquistoController extends AbstractController<AcquistoDTO>{
 
 
 
-    @PostMapping("/insert")
+    @PutMapping("/insert")
     public AcquistoDTO insert(@RequestBody AcquistoDTO acquistoDTO){
         service.insert(acquistoDTO);
         return acquistoDTO;
