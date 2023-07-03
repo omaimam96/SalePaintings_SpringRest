@@ -15,6 +15,8 @@ import it.contrader.dto.UserDTO;
 import it.contrader.service.UserService;
 
 
+
+
 /**
  * 
  * Questa classe estende AbstractController con tipo UserDTO.
@@ -51,7 +53,7 @@ public class UserController extends AbstractController<UserDTO>{
 	public UserDTO login( @RequestBody LoginDTO loginDTO ) {
 		return userService.findByUsernameAndPassword(loginDTO.getUsername(), loginDTO.getPassword());
 	}
-	@DeleteMapping("/delete")
+	@DeleteMapping("/deleteuser")
 	public String delete(@RequestParam("id") long id){
 		ProfiloDTO profiloDTO=profiloConverter.toDTO(profiloService.readByUser(userConverter.toEntity(userService.read(id))));
 		profiloDTO.setUser(null);
@@ -65,7 +67,8 @@ public class UserController extends AbstractController<UserDTO>{
 
 		profiloService.update(profiloDTO);
 		userService.delete(id);
-		return "DELETE_OK";
+
+		return null;
 	}
 
 
