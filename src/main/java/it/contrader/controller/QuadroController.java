@@ -64,11 +64,12 @@ public class QuadroController extends AbstractController<QuadroDTO>{
     @GetMapping("/getfilter")
     public List<Quadro> getAllByFilter(@RequestParam String tipologia,
                                        @RequestParam String orientamento,
-                                       @RequestParam String ricerca){
+                                       @RequestParam String ricerca,
+                                       @RequestParam String ordine){
         tipologia="%"+tipologia+"%";
         orientamento="%"+orientamento+"%";
         ricerca="%"+ricerca+"%";
-        return quadroService.getAllByFilter(tipologia,orientamento,ricerca);
+        return quadroService.getAllByFilter(tipologia,orientamento,ricerca, ordine);
     }
 
 
