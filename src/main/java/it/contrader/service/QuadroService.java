@@ -3,6 +3,7 @@ package it.contrader.service;
 import it.contrader.dao.ProfiloRepository;
 import it.contrader.dao.QuadroRepository;
 import it.contrader.dto.QuadroDTO;
+import it.contrader.model.Profilo;
 import it.contrader.model.Quadro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,4 +36,7 @@ public class QuadroService extends AbstractService<Quadro, QuadroDTO> {
     public List<Quadro> getAllByFilter(String tipologia, String orientamento, String ricerca, String ordine) {
         return QRepository.getAllByFilter(tipologia, orientamento, ricerca, ordine);
     }
+    public List<Quadro> readByAcquistoId(long acquistoId){
+        return QRepository.findByAcquistoId(acquistoId);
+}
 }

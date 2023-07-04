@@ -1,9 +1,9 @@
 package it.contrader.controller;
 
 import it.contrader.converter.ProfiloConverter;
-import it.contrader.dto.ProfiloDTO;
+import it.contrader.converter.QuadroConverter;
 import it.contrader.dto.QuadroDTO;
-import it.contrader.model.Profilo;
+import it.contrader.model.Acquisto;
 import it.contrader.model.Quadro;
 import it.contrader.service.ProfiloService;
 import it.contrader.service.QuadroService;
@@ -28,6 +28,8 @@ public class QuadroController extends AbstractController<QuadroDTO>{
     private ProfiloService profiloService;
     @Autowired
     private ProfiloConverter profiloConverter;
+    @Autowired
+    private QuadroConverter quadroConverter;
 
 
     //POST Angular a UserDTO
@@ -70,6 +72,10 @@ public class QuadroController extends AbstractController<QuadroDTO>{
         orientamento="%"+orientamento+"%";
         ricerca="%"+ricerca+"%";
         return quadroService.getAllByFilter(tipologia,orientamento,ricerca, ordine);
+    }
+    @GetMapping("/readByAcquistoId")
+    public List<QuadroDTO> readAcquistoId(@RequestParam ("id") Acquisto acquistoId) {
+        return quadroConverter.toDTOList(quadroService.readByAcquistoId(acquistoId.getId()));
     }
 
 
