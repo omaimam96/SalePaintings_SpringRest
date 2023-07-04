@@ -23,8 +23,8 @@ public interface QuadroRepository extends CrudRepository<Quadro, Long>{
             "WHERE venduto=0\n" +
             "AND tipologia LIKE ?\n" +
             "AND orientamento LIKE ?\n" +
-            "AND nome_quadro LIKE ?\n")
-    List<Quadro> getAllByFilter(String tipologia, String orientamento,String ricerca, String ordine);
+            "AND nome_quadro LIKE ?\n" )
+    List<Quadro> getAllByFilter(String tipologia, String orientamento,String ricerca);
     List<Quadro> findByAcquistoId(long acquistoId);
 }
 
